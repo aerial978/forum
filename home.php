@@ -1,8 +1,6 @@
 <?php
-
-require('actions/signupAction.php');
-
-require('actions/securityAction.php');
+session_start();
+require('actions/users/securityAction.php');
 
 ?>
 <!DOCTYPE html>
@@ -11,17 +9,11 @@ require('actions/securityAction.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include 'includes/head.php'; ?>
     <title>Document</title>
 </head>
 <body>
-<h1>Page home</h1>
-
-<?php
-if(isset($_SESSION['auth'])) {
-    echo $_SESSION['username'];
-}
-
-?>
+<?php include 'includes/navbar.php'; ?>
 </body>
 </html>
 

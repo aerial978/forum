@@ -7,14 +7,14 @@ if (isset($_POST['submit'])) {
         $password = htmlspecialchars($_POST['password']);
         // Vérifier si user existe
         $checkUser = $bdd->prepare('SELECT * FROM user WHERE username = ?');
-        $checkUser->execute(array($username));
+        $checkUser->execute([$username]);
         // Récupérer les données user
         if ($checkUser->rowCount() > 0) {
             $userInfo = $checkUser->fetch();
             if (password_verify($password, $userInfo['password'])) {
                 // Authentifier user et récupérer ses données dans session
                 $_SESSION['auth'] = $userInfo;
-                $_SESSION['username'] = $username;
+                $_SESSION['username'] = $userInfo['username'];
 
                 header('Location: home.php');
             } else {

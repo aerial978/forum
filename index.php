@@ -1,4 +1,4 @@
-<?php require('actions/signinAction.php'); ?>
+<?php require('actions/users/indexAction.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/head.php'; ?>

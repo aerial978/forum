@@ -11,19 +11,18 @@ if (isset($_POST['submit'])) {
         // Récupérer les données user
         if ($checkUser->rowCount() > 0) {
             $userInfo = $checkUser->fetch();
-            if (password_verify($password,$userInfo['password'])) {
+            if (password_verify($password, $userInfo['password'])) {
                 // Authentifier user et récupérer ses données dans session
                 $_SESSION['auth'] = $userInfo;
                 $_SESSION['username'] = $username;
 
                 header('Location: home.php');
-            } else { 
+            } else {
                 $errorMsg = "Invalid username or password !";
             }
         } else {
             $errorMsg = "Invalid username or password !";
         }
-
     } else {
         $errorMsg = "Please complete all fields !";
     }

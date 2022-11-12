@@ -1,0 +1,7 @@
+1 Inscription / connexion
+2 Publier une question
+3 Modifier une question
+4 Supprimer une question
+5 Rechercher et afficher les questions
+6 Répondre à une question
+7 Afficher le profil d'un utilisateur (avec ses publications)
